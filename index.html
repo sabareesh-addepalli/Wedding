@@ -26,15 +26,17 @@
         background: black;
       }
 
-      /* 3D INVITE CARD */
+      /* INVITE CARD */
 
       .invite-wrapper {
         height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
-        background: #d3212d;
         perspective: 1500px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
       }
 
       .card {
@@ -67,7 +69,6 @@
       .front {
         background: #ffdf00;
         color: #d3212d;
-        
       }
 
       .back {
@@ -79,7 +80,6 @@
       .title {
         font-family: "Great Vibes";
         font-size: 45px;
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
       }
 
       /* SECTIONS */
@@ -156,7 +156,7 @@
         cursor: pointer;
       }
 
-      /* LOVE ANIMATION */
+      /* HEART ANIMATION */
 
       .love {
         position: fixed;
@@ -209,35 +209,20 @@
           font-size: 14px;
         }
       }
-
-      @media (max-width: 320px) {
-        .time {
-          width: 60px;
-          height: 60px;
-        }
-
-        .time h3 {
-          font-size: 14px;
-        }
-
-        .time p {
-          font-size: 12px;
-        }
-      }
     </style>
   </head>
 
   <body>
-    <audio autoplay loop>
+    <audio id="music" loop>
       <source src="https://www2.cs.uic.edu/~i101/SoundFiles/StarWars60.wav" />
     </audio>
 
-    <!-- INVITE CARD -->
+    <!-- INVITATION CARD -->
 
     <div
       class="invite-wrapper"
       style="
-        background-image: url(&quot;https://images.unsplash.com/photo-1542042161784-26ab9e041e89?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&quot;);
+        background-image: url(&quot;https://images.unsplash.com/photo-1542042161784-26ab9e041e89&quot;);
       "
       id="invite"
     >
@@ -260,7 +245,7 @@
 
     <section
       style="
-        background-image: url(&quot;https://plus.unsplash.com/premium_photo-1670524465634-93cf255ffa8b?q=80&w=1454&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&quot;);
+        background-image: url(&quot;https://plus.unsplash.com/premium_photo-1670524465634-93cf255ffa8b&quot;);
       "
     >
       <div class="overlay"></div>
@@ -300,7 +285,7 @@
 
     <section
       style="
-        background-image: url(&quot;https://plus.unsplash.com/premium_photo-1698500035173-fdea60f9294e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&quot;);
+        background-image: url(&quot;https://plus.unsplash.com/premium_photo-1698500035173-fdea60f9294e&quot;);
       "
     >
       <div class="overlay"></div>
@@ -315,7 +300,7 @@
 
     <section
       style="
-        background-image: url(&quot;https://images.unsplash.com/photo-1597157639073-69284dc0fdaf?q=80&w=1474&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&quot;);
+        background-image: url(&quot;https://images.unsplash.com/photo-1597157639073-69284dc0fdaf&quot;);
       "
     >
       <div class="overlay"></div>
@@ -330,7 +315,7 @@
 
     <section
       style="
-        background-image: url(&quot;https://images.unsplash.com/photo-1772127822552-ce9ef537bdcf?q=80&w=1492&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&quot;);
+        background-image: url(&quot;https://images.unsplash.com/photo-1772127822552-ce9ef537bdcf&quot;);
       "
     >
       <div class="overlay"></div>
@@ -355,12 +340,22 @@
       function openInvite() {
         document.getElementById("card").classList.add("open");
 
-        setTimeout(() => {
-          document.getElementById("invite").style.display = "none";
-        }, 1200);
+        document.getElementById("music").play();
+
+        // setTimeout(()=>{
+        // document.getElementById("invite").style.display="none";
+        // },3000);
       }
 
-      /* LOVE ANIMATION */
+      window.addEventListener("scroll", function () {
+        let scroll = window.pageYOffset;
+
+        document.querySelectorAll(".parallax-bg").forEach((bg) => {
+          bg.style.transform = "translateY(" + scroll * 0.3 + "px)";
+        });
+      });
+
+      /* HEARTS */
 
       for (let i = 0; i < 40; i++) {
         let love = document.createElement("div");
@@ -381,15 +376,20 @@
         const now = new Date().getTime();
         const distance = weddingDate - now;
 
+        if (distance < 0) return;
+
         document.getElementById("days").innerText = Math.floor(
           distance / (1000 * 60 * 60 * 24),
         );
+
         document.getElementById("hours").innerText = Math.floor(
           (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
         );
+
         document.getElementById("minutes").innerText = Math.floor(
           (distance % (1000 * 60 * 60)) / (1000 * 60),
         );
+
         document.getElementById("seconds").innerText = Math.floor(
           (distance % (1000 * 60)) / 1000,
         );
