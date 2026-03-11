@@ -147,8 +147,8 @@
   </head>
 
   <body>
-    <audio autoplay loop>
-      <source src="wedding-music.mp3" type="audio/mpeg" />
+    <audio id="bgMusic" loop>
+      <source src="./assets/audio.mp3" type="audio/mpeg" />
     </audio>
 
     <!-- HOME -->
@@ -360,6 +360,19 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
+      const music = document.getElementById("bgMusic");
+      music.volume = 0.5; // adjust volume
+
+      // Function to start music
+      function startMusic() {
+        music.play().catch((err) => console.log("Autoplay blocked:", err));
+        document.body.removeEventListener("click", startMusic);
+      }
+
+      // Play on first user interaction
+      document.body.addEventListener("load", startMusic);
+      document.body.addEventListener("click", startMusic);
+      document.body.addEventListener("touchstart", startMusic); // for mobile
       AOS.init({
         duration: 1500,
       });
