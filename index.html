@@ -10,6 +10,10 @@
       href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
@@ -60,12 +64,19 @@
       }
 
       h2 {
+        font-family: "Great Vibes", cursive;
         font-size: 40px;
         margin-bottom: 15px;
       }
 
+      h3 {
+        font-family: "Lobster Two", sans-serif;
+      }
+
       p {
+        font-family: "Lobster Two", sans-serif;
         font-size: 20px;
+        font-weight: 400;
       }
 
       nav {
@@ -108,12 +119,17 @@
         height: 300px;
         border-radius: 10px;
       }
-      .content h1,  .content h2 {
+      .content h1,
+      .content h2 {
         text-shadow: 1px 5px 3px black;
       }
       .content p,
-      .timer {
+      .timer,
+      .content h3 {
         text-shadow: 0px 2px 0px black;
+      }
+      .timer {
+        font-family: "Lobster Two", sans-serif;
       }
 
       @media (max-width: 768px) {
@@ -184,7 +200,7 @@
 
         <br />
 
-        <p><strong>April 1st, 2026</strong></p>
+        <h3>April 1st, 2026</h3>
 
         <div class="timer" id="countdown"></div>
       </div>
@@ -199,7 +215,7 @@
       <div class="overlay"></div>
 
       <div class="content" data-aos="fade-up">
-        <h2>Muhurtham</h2>
+        <h1>Muhurtham</h1>
 
         <p><strong>April 1st, 2026</strong></p>
         <p>Wednesday</p>
@@ -237,43 +253,36 @@
       </div>
     </section>
 
-    <!-- VENUE -->
-
-    <section
-      id="venue"
-      style="background-image: url(&quot;images/venue.jpg&quot;)"
-    >
-      <div class="overlay"></div>
-
-      <div class="content" data-aos="fade-right">
-        <h2>Venue</h2>
-
-        <p>Sri Lakshmi Convention Hall</p>
-        <p>Visakhapatnam, Andhra Pradesh</p>
-
-        <br />
-
-        <iframe
-          src="https://maps.google.com/maps?q=visakhapatnam&t=&z=13&ie=UTF8&iwloc=&output=embed"
-        >
-        </iframe>
-      </div>
-    </section>
-
     <!-- DINNER -->
 
     <section
       id="dinner"
-      style="background-image: url(&quot;images/dinner.jpg&quot;)"
+      style="background-image: url(&quot;./assets/food.jpg&quot;)"
     >
       <div class="overlay"></div>
 
       <div class="content" data-aos="fade-left">
-        <h2>Dinner</h2>
+        <h1>Wedding Dinner</h1>
 
-        <p>Reception Dinner</p>
-        <p>March 31st 2026</p>
-        <p>7:00 PM onwards</p>
+        <p>
+          Join us for a delightful evening of celebration, laughter, and
+          delicious food as we gather with family and friends.
+        </p>
+
+        <br />
+
+        <p><strong>Date:</strong> April 1st, 2026</p>
+        <p><strong>Time:</strong> 7:00 PM onwards</p>
+
+        <br />
+
+        <p>
+          Your presence will make this celebration even more special for us.
+        </p>
+
+        <br />
+
+        <p>We look forward to sharing this joyful evening with you.</p>
       </div>
     </section>
 
@@ -281,16 +290,80 @@
 
     <section
       id="gallery"
-      style="background-image: url(&quot;images/gallery-bg.jpg&quot;)"
+      style="background-image: url(&quot;./assets/close.jpg&quot;)"
     >
       <div class="overlay"></div>
 
       <div class="content gallery" data-aos="zoom-in">
-        <h2>Our Moments</h2>
+        <h1>Our Moments</h1>
+
+        <p>A glimpse of the beautiful moments that brought us together.</p>
+
+        <p>
+          Every smile, every memory, and every step has led us to this special
+          day.
+        </p>
 
         <br />
 
-        <img id="galleryImage" src="images/photo1.jpg" />
+        <img id="galleryImage" src="assets/muhurtham.jpg" />
+      </div>
+    </section>
+
+    <!-- VENUE -->
+
+    <section
+      id="venue"
+      style="background-image: url(&quot;./assets/venue.jpg&quot;)"
+    >
+      <div class="overlay"></div>
+
+      <div class="content" data-aos="fade-right">
+        <h1>Venue</h1>
+
+        <p>
+          Near Polipillama Temple<br />
+          Thummapala Village<br />
+          Anakapalle District – 531002
+        </p>
+
+        <p>📞 8309890570 | 📞 9347774823</p>
+
+        <p>
+          We look forward to welcoming you to celebrate our special day with us.
+        </p>
+
+        <br />
+
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1793.6382394475804!2d82.99508626381447!3d17.716960462227334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a39717c49d1d297%3A0x9fe66c7fe335d4fc!2zUG9saXBhbGxpIFRoYWxsaSBBbW1hdmFyaSBUZW1wbGUgKOCwquCxi-CwsuCwv-CwquCwsuCxjeCwsuCwvyDgsKTgsLLgsY3gsLLgsL8g4LCF4LCu4LGN4LCuIOCwteCwvuCwsOCwvyDgsJfgsYHgsKHgsL8p!5e0!3m2!1sen!2sin!4v1773238721181!5m2!1sen!2sin"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- Thank you -->
+
+    <section
+      id="muhurtham"
+      style="background-image: url(&quot;./assets/celebration.jpg&quot;)"
+    >
+      <div class="overlay"></div>
+
+      <div class="content" data-aos="fade-up">
+        <h1>Thank You</h1>
+
+        <p>
+          Your presence and blessings have made our day extra special. With
+          love,
+        </p>
+        <br />
+        <h3>Sabareesh & Swathi</h3>
       </div>
     </section>
 
@@ -324,10 +397,10 @@
       // GALLERY SLIDESHOW
 
       const images = [
-        "images/photo1.jpg",
-        "images/photo2.jpg",
-        "images/photo3.jpg",
-        "images/photo4.jpg",
+        "assets/welcome.jpg",
+        "assets/close.jpg",
+        "assets/venue.jpg",
+        "assets/food.jpg",
       ];
 
       let index = 0;
@@ -338,7 +411,7 @@
         if (index >= images.length) index = 0;
 
         document.getElementById("galleryImage").src = images[index];
-      }, 3000);
+      }, 1000);
     </script>
   </body>
 </html>
