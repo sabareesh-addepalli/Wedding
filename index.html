@@ -11,7 +11,7 @@
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
 
@@ -22,7 +22,15 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
+        font-family: "Caveat", cursive;
+      }
+
+      #name1,
+      #name2 {
+
+        font-family: "Lobster Two", cursive;
+        font-size: 50px;
+        margin: 10px 0;
       }
 
       html {
@@ -58,24 +66,24 @@
       }
 
       h1 {
-        font-family: "Great Vibes", cursive;
+        font-family: "Caveat", cursive;
         font-size: 60px;
         margin-bottom: 20px;
       }
 
       h2 {
-        font-family: "Great Vibes", cursive;
+        font-family: "Caveat", cursive;
         font-size: 40px;
         margin-bottom: 15px;
       }
 
       h3 {
-        font-family: "Lobster Two", sans-serif;
+        font-family: "Caveat", cursive, sans-serif;
       }
 
       p {
-        font-family: "Lobster Two", sans-serif;
-        font-size: 20px;
+        font-family: "Caveat", cursive, sans-serif;
+        font-size: 30px;
         font-weight: 400;
       }
 
@@ -129,7 +137,25 @@
         text-shadow: 0px 2px 0px black;
       }
       .timer {
-        font-family: "Lobster Two", sans-serif;
+        font-family: "Caveat", cursive, sans-serif;
+      }
+
+      .strike {
+        text-decoration: line-through;
+        color: red;
+        opacity: 0.6;
+        transition: 0.5s;
+      }
+
+      #flamesProcess {
+        font-size: 28px;
+        margin-top: 15px;
+      }
+
+      #flamesResult {
+        font-size: 40px;
+        margin-top: 20px;
+        color: #ffd166;
       }
 
       @media (max-width: 768px) {
@@ -140,7 +166,7 @@
           font-size: 28px;
         }
         p {
-          font-size: 16px;
+          font-size: 20px;
         }
       }
     </style>
@@ -158,35 +184,25 @@
       style="background-image: url(&quot;./assets/welcome.jpg&quot;)"
     >
       <div class="overlay"></div>
-
       <div class="content" data-aos="zoom-in">
-        <h1>Sabareesh ❤️ Swathi</h1>
+        <h1>Addepalli's Wedding Invitation</h1>
 
-        <p>
-          With the blessings of our families and loved ones, we joyfully invite
-          you to celebrate the beginning of our beautiful journey together.
-        </p>
+        <p>We invite you to witness the start of our forever :)</p>
+
+        <br />
+
+        <p>Your presence will add to the magic of our special day</p>
 
         <br />
 
         <p>
-          Two hearts, two families, and a lifetime of love come together on this
-          special day.
+          Our wedding bells are ringing- join us at Thummapala on April 1st 2026
+          at 7:00 PM to find yours!
         </p>
 
         <br />
 
-        <p>
-          We would be honored to have you join us as we exchange our vows and
-          begin our new life as husband and wife.
-        </p>
-
-        <br />
-
-        <p>
-          Please join us to celebrate our wedding and bless us with your love
-          and presence.
-        </p>
+        <p>Join our biggest celebrations!</p>
 
         <br />
 
@@ -198,6 +214,7 @@
 
     <!-- MUHURTHAM -->
 
+   
     <section
       id="muhurtham"
       style="background-image: url(&quot;./assets/muhurtham.jpg&quot;)"
@@ -209,7 +226,7 @@
 
         <p><strong>April 1st, 2026</strong></p>
         <p>Wednesday</p>
-        <p><strong>9:15 AM – 10:00 AM</strong></p>
+        <p><strong>8:15 PM</strong></p>
 
         <br />
 
@@ -360,19 +377,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
-      const music = document.getElementById("bgMusic");
-      music.volume = 0.5; // adjust volume
-
-      // Function to start music
-      function startMusic() {
-        music.play().catch((err) => console.log("Autoplay blocked:", err));
-        document.body.removeEventListener("click", startMusic);
-      }
-
-      // Play on first user interaction
-      document.body.addEventListener("load", startMusic);
-      document.body.addEventListener("click", startMusic);
-      document.body.addEventListener("touchstart", startMusic); // for mobile
       AOS.init({
         duration: 1500,
       });
